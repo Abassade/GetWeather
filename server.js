@@ -10,11 +10,11 @@ app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs')
 
-app.get('/weather', function (req, res) {
+app.get('/', function (req, res) {
   res.render('index', {weather: null, error: null});
 })
 
-app.post('/weather', function (req, res) {
+app.post('/', function (req, res) {
   let city = req.body.city;
 
   // to input frm console we can import const argv = require('yargs').argv;  then say let city = argv.c || 'any';
